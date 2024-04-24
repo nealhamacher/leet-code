@@ -28,9 +28,8 @@ class Solution(object):
         for i in range(len(idxs2)):
             nums1[idxs2[i]] = nums2[i]
 
+        # Total O(m+n) + O(m) + O(n) = O(m+n)
 
-
-        
 
 ###############################################################################
 
