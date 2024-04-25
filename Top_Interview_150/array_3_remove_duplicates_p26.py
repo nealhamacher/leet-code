@@ -7,9 +7,6 @@ class Solution(object):
         i = 0
         j = 1
         n_unique = len(nums)
-        idxs_unique = []
-        if nums:
-            idxs_unique.append(nums[0])
         while j < len(nums):
             if nums[i] == nums[j]:
                 nums[j] = "_"
@@ -18,10 +15,7 @@ class Solution(object):
             else:
                 i = j
                 j += 1
-                idxs_unique.append(i)
-        for i in range(n_unique):
-            if idxs_unique[i] != i:
-                nums[i], nums[idxs_unique[i]] = nums[idxs_unique[i]], nums[i]
+        nums = sorted(nums)
         return n_unique
 
 ################################################################################
