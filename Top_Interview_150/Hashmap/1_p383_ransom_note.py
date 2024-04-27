@@ -34,4 +34,3 @@ if __name__ == "__main__":
     ransomNote = "aa" 
     magazine = "aab"
     print(sol.canConstruct(ransomNote, magazine))
-

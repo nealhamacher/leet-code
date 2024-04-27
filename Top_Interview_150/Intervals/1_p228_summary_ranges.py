@@ -4,6 +4,7 @@ class Solution(object):
         :type nums: List[int]
         :rtype: List[str]
         """
+        # Handle empty list
         if len(nums) == 0:
             return []
         else:
