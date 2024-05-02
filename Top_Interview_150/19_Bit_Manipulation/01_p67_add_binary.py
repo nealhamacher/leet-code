@@ -43,13 +43,24 @@ class Solution(object):
         if carry == 1:
             sum = "1" + sum
         return sum
-    
+
+    def addBinaryShort(self, a, b):
+        """
+        :type a: str
+        :type b: str
+        :rtype: str
+        """    
+        bin_a = int(a, base=2)
+        bin_b = int(b, base=2)
+        return str(bin(bin_a + bin_b)[2:])
 
 ################################################################################
 
 if __name__ == "__main__":
     sol = Solution()
     print(sol.addBinary("11", "1"))
+    print(sol.addBinaryShort("11", "1"))
     print(sol.addBinary("1010", "1011"))
+    print(sol.addBinaryShort("1010", "1011"))
 
 
