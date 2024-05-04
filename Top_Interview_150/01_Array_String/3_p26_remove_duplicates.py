@@ -4,19 +4,34 @@ class Solution(object):
         :type nums: List[int]
         :rtype: int
         """
+        # Remove duplicates step
         i = 0
         j = 1
-        n_unique = len(nums)
+        k = len(nums)
         while j < len(nums):
             if nums[i] == nums[j]:
                 nums[j] = "_"
                 j += 1
-                n_unique -= 1
+                k -= 1
             else:
                 i = j
                 j += 1
-        nums = sorted(nums)
-        return n_unique
+        
+
+        #Bubble empty indices to end step
+        last_idx = len(nums) - 1
+        i = 0
+        while i < last_idx:
+            if nums[i] == "_":
+                j = i
+                while j < last_idx:
+                    nums[j], nums[j+1] = nums[j+1], nums[j]
+                    j += 1
+                last_idx -= 1
+            else:
+                i += 1
+
+        return k
 
 ################################################################################
 
