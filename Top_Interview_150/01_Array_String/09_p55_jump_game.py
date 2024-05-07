@@ -22,14 +22,21 @@ class Solution(object):
         :type nums: List[int]
         :rtype: bool
         """
-        max_end = nums[0]
+        max_jump = nums[0]
         for i in range(1, len(nums)-1):
-            max_end -= 1
-            if nums[i] > max_end:
-                max_end = nums[i]
-            if max_end == 0:
+            # Decrease maximum jump by one each iteration
+            max_jump -= 1
+            # If can jump further from current position than remaining jump,
+            # then overweite max jump
+            if nums[i] > max_jump:
+                max_jump = nums[i]
+
+            # If we can reach the last index, can jump
+            if max_jump + i >= len(nums) - 1:
+                return True
+            # If we hit 0 jumps left, cannot make it
+            if max_jump <= 0:
                 return False
-        return True
             
   
 ################################################################################
