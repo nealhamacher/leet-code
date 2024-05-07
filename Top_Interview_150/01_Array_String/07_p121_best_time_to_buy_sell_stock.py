@@ -14,7 +14,7 @@ class Solution(object):
             else:
                 min = prices[i]
         return max_profit
-        
+
 
 ################################################################################
 if __name__ == "__main__":
