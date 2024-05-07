@@ -53,8 +53,8 @@ class Solution(object):
 
 if __name__ == "__main__":
     sol = Solution()
-    n4 = TreeNode(3)
-    n3 = TreeNode(0)
+    n4 = TreeNode(4)
+    n3 = TreeNode(1)
     n2 = TreeNode(12)
     n1 = TreeNode(2, n3, n4)
     n0 = TreeNode(8, n1, n2)

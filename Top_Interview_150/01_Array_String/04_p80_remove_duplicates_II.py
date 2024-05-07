@@ -4,6 +4,8 @@ class Solution(object):
         :type nums: List[int]
         :rtype: int
         """
+
+        # Remove duplicates step
         k = len(nums)
         n_dups = 1
         i = 0
@@ -16,6 +18,7 @@ class Solution(object):
             else:
                 i = i + n_dups
                 n_dups = 1
+
         last_idx = len(nums)-1
         i = 0
         while i < last_idx:

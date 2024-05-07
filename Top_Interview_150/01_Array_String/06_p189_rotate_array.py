@@ -29,13 +29,11 @@ class Solution(object):
         """
         rot = k % len(nums)
         for i in range(rot):
-            print(i)
             next_in = nums[len(nums)-1]
             for j in range(len(nums)):
                 current = nums[j]
                 nums[j] = next_in
                 next_in = current
-            print(nums)
         
 
 ################################################################################

@@ -23,7 +23,7 @@ if __name__ == "__main__":
     t = 7
     ns = [2,3,1,2,4,3]
     print(sol.minSubArrayLen(t, ns))
-    t = 4
+    t = 4   
     ns = [1,4,4]
     print(sol.minSubArrayLen(t, ns))
     t = 11
