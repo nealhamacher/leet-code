@@ -26,13 +26,15 @@ class Solution(object):
 
         # Loop through while either list is not 0
         while list1 != None or list2 != None:
-            # This if and elif are redundant I think 
+            # If either list is at end, rest of list is end of other list
             if list1 == None:
                 current.next = list2
                 break
             elif list2 == None:
                 current.next = list1
                 break
+
+            # Otherwise the next node is the lowest value of current list1 and list2 
             else:
                 if list1.val <= list2.val:
                     current.next = list1

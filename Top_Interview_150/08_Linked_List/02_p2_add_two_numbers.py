@@ -11,20 +11,23 @@ class Solution(object):
         :type l2: ListNode
         :rtype: ListNode
         """
+        # If either list is empty, return non-empty list
         if l2 == None:
             return l1
         if l1 == None:
             return l2
+        # Add first digit in lists, move to next digit
         current = l1.val + l2.val
         l1 = l1.next
         l2 = l2.next
-        # Carry digit
+        # Handle carry digit
         if current >= 10:
             current -= 10
             carry = 1
         else:
             carry = 0
         
+        # Create first node of sum
         head = current_node = ListNode(current)
 
 
@@ -45,6 +48,8 @@ class Solution(object):
                 current -= 10
             else:
                 carry = 0
+            
+            # Move to next digit, create node for digit sum, link to previous digit
             prev_node = current_node
             current_node = ListNode(current)
             prev_node.next = current_node
