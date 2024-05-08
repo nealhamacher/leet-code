@@ -11,10 +11,23 @@ class Solution(object):
         :type l2: ListNode
         :rtype: ListNode
         """
+        if l2 == None:
+            return l1
+        if l1 == None:
+            return l2
+        current = l1.val + l2.val
+        l1 = l1.next
+        l2 = l2.next
         # Carry digit
-        carry = 0
-        # Total Sum
-        sum = []
+        if current >= 10:
+            current -= 10
+            carry = 1
+        else:
+            carry = 0
+        
+        head = current_node = ListNode(current)
+
+
         # Digits remaining in L1
         while l1 != None:
             # No digits remaining in L2, sum L1 digit and carry
@@ -32,7 +45,9 @@ class Solution(object):
                 current -= 10
             else:
                 carry = 0
-            sum.append(current)
+            prev_node = current_node
+            current_node = ListNode(current)
+            prev_node.next = current_node
 
         # If L2 has more digits than L1
         while l2 != None:
@@ -42,14 +57,18 @@ class Solution(object):
                 current -= 10
             else:
                 carry = 0
-            sum.append(current)
             l2 = l2.next
+            prev_node = current_node
+            current_node = ListNode(current)
+            prev_node.next = current_node               
         
         # Final carry 
         if carry == 1:
-            sum.append(carry)
-
-        return sum
+            prev_node = current_node
+            current_node = ListNode(carry)
+            prev_node.next = current_node          
+        
+        return head
     
 
 ################################################################################
@@ -62,7 +81,11 @@ if __name__ == "__main__":
     l22 = ListNode(4)
     l21 = ListNode(6, l22)
     l20 = ListNode(5, l21)
-    print(sol.addTwoNumbers(l10, l20))
+    head = sol.addTwoNumbers(l10, l20)
+    while head != None:
+        print(head.val)
+        head = head.next
+    print("\n")
     l16 = ListNode(9)
     l15 = ListNode(9, l16)
     l14 = ListNode(9, l15)
@@ -74,5 +97,12 @@ if __name__ == "__main__":
     l22 = ListNode(9, l23)
     l21 = ListNode(9, l22)
     l20 = ListNode(9, l21)
-    print(sol.addTwoNumbers(l10, l20))
-    print(sol.addTwoNumbers(l20, l10))
+    head = sol.addTwoNumbers(l10, l20)
+    while head != None:
+        print(head.val)
+        head = head.next
+    print("\n")
+    head = sol.addTwoNumbers(l20, l10)
+    while head != None:
+        print(head.val)
+        head = head.next
