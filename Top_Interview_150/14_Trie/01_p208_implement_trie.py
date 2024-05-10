@@ -1,7 +1,7 @@
 class Node(object):
     def __init__(self):
         self.children = {}
-        self.isEnd = False
+        self.isLastLetter = False
 
 class Trie(object):
 
@@ -18,7 +18,7 @@ class Trie(object):
             if letter not in current.children.keys():
                 current.children[letter] = Node()
             current = current.children[letter]
-        current.isEnd = True
+        current.isLastLetter = True
         
 
     def search(self, word):
@@ -31,7 +31,7 @@ class Trie(object):
             if letter not in current.children.keys():
                 return False
             current = current.children[letter]
-        if current.isEnd:
+        if current.isLastLetter:
             return True
         else:
             return False
