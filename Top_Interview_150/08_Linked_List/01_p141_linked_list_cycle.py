@@ -20,6 +20,20 @@ class Solution(object):
                 visited.append(current)
         return False
 
+    # Using Floyd's tortoise and hare method
+    def hasCycleFloyd(self, head):
+        """
+        :type head: ListNode
+        :rtype: bool
+        """
+        hare = tortoise = head
+        while hare != None and hare.next != None:
+            hare = hare.next.next
+            tortoise = tortoise.next
+            if hare == tortoise:
+                return True
+        return False
+
 
 ################################################################################
 if __name__ == "__main__":
@@ -32,14 +46,16 @@ if __name__ == "__main__":
     node2.next = node3
     node3.next = node4
     node4.next = node2
-
     print(sol.hasCycle(node1))
+    print(sol.hasCycleFloyd(node1))
+
     node1 = ListNode(1)
     node2 = ListNode(2)
     node1.next = node2
     node2.next = node1
     print(sol.hasCycle(node1))
-    
+    print(sol.hasCycleFloyd(node1))
+
     node1 = ListNode(1)
     print(sol.hasCycle(node1))
-    
+    print(sol.hasCycleFloyd(node1))
