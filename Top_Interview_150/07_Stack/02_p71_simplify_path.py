@@ -4,6 +4,7 @@ class Solution(object):
         :type path: str
         :rtype: str
         """
+        '''
         stack = []
         for i in range(len(path)):
             current = ''
@@ -34,6 +35,31 @@ class Solution(object):
         if len(stack) == 0:
             stack=["/"]
         print(stack)
+        '''
+        elements = path.split('/')
+        stack = []
+        for element in elements:
+            # Empty element (multiple consecutive /) or single period - ignored in output
+            if element == '' or element == '.':
+                continue
+            # Two periods - navigate up one level, if stack is not empty
+            elif element == '..':
+                if len(stack) == 0:
+                    continue
+                else:
+                    stack.pop()
+            else:
+                stack.append(element)
+
+        if len(stack) == 0:
+            return "/"
+        
+        output = ""
+        for item in stack:
+            output += "/"
+            output += item
+        
+        return output
 
 
 ################################################################################
