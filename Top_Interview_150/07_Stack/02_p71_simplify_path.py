@@ -4,38 +4,6 @@ class Solution(object):
         :type path: str
         :rtype: str
         """
-        '''
-        stack = []
-        for i in range(len(path)):
-            current = ''
-            if path[i] == '.':
-                if i == len(path) or path[i+1] == '/':
-                    continue
-                elif path[i+1] == '.':
-                    if len(stack) == 0:
-                        continue
-                    if i+1 == len(path) or path[i+2] == '/':
-                        stack.pop(len(stack)-1)
-                    else:
-                        while i < len(path)-1 and path[i] != '/':
-                            current += path[i]
-                            i += 1
-            elif path[i] == '/':
-                stack.append('/')
-                while i < len(path)-1 and path[i+1] == '/':
-                        i += 1
-            else:
-                while i < len(path)-1 and path[i+1] != '/':
-                        current += path[i]
-                        i += 1
-            if current != '':
-                 stack.append(current)
-        if stack[len(stack)-1] == '/':
-            stack.pop(len(stack)-1)
-        if len(stack) == 0:
-            stack=["/"]
-        print(stack)
-        '''
         elements = path.split('/')
         stack = []
         for element in elements:
@@ -51,6 +19,7 @@ class Solution(object):
             else:
                 stack.append(element)
 
+        # Empty stack - no path, have navigated to root
         if len(stack) == 0:
             return "/"
         
