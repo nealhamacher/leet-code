@@ -4,26 +4,33 @@ class Solution(object):
         :type digits: str
         :rtype: List[str]
         """
-        if not digits:
-            return ""
+        return(self.generateCombinations(digits, ""))
         
-        letters = {2: ['a','b','c'], 
-                   3:['d','e','f'],
-                   4: ['g','h','i'],
-                   5: ['j','k','l'],
-                   6: ['m','n','o'],
-                   7: ['p','q','r','s'],
-                   8: ['t','u','v'],
-                   9: ['w','x','y','z']}
+    def generateCombinations(self, digits, output):
+        """
+        :type digits: str
+        :type output: str
+        :rtype: List[str]
+        """
         
-        output = []
-        for letter in letters[int(digits[0])]:
-            print(letter)
-            print(type(digits[1:]))
-            string = letter + self.letterCombinations(digits[1:])
+        if len(digits) == 0:
+            return output
+        
+        letters = {'2': ['a','b','c'], 
+                   '3':['d','e','f'],
+                   '4': ['g','h','i'],
+                   '5': ['j','k','l'],
+                   '6': ['m','n','o'],
+                   '7': ['p','q','r','s'],
+                   '8': ['t','u','v'],
+                   '9': ['w','x','y','z']}
+        
+        combinations = []
 
-        return output.append(string)
-        
+        for letter in letters[digits[0]]:
+            combinations.append(self.generateCombinations(digits[1:], output+letter))
+        return combinations
+
 
 ################################################################################
 
