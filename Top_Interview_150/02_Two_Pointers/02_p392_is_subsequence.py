@@ -7,6 +7,23 @@ class Solution(object):
         """
         i = 0
         j = 0
+        while i < len(t) and j < len(s):
+            if t[i] == s[j]:
+                j += 1
+            i += 1
+
+        return j == len(s)
+    
+    def isSubsequenceOld(self, s, t):
+        """
+        :type s: str
+        :type t: str
+        :rtype: bool
+        """
+        if not s:
+            return True
+        i = 0
+        j = 0
         while i < len(t):
             if t[i] == s[j]:
                 j += 1
