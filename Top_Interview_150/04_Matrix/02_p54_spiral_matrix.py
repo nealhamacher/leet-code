@@ -1,4 +1,5 @@
 class Solution(object):
+    # Runtime = 12ms, beats 73.18%. Memory = 11.66 MB, beats 43.59%
     def spiralOrder(self, matrix):
         """
         :type matrix: List[List[int]]

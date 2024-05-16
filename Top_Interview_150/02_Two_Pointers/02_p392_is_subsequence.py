@@ -1,4 +1,5 @@
 class Solution(object):
+    # Faster solution
     def isSubsequence(self, s, t):
         """
         :type s: str
@@ -14,6 +15,7 @@ class Solution(object):
 
         return j == len(s)
     
+    # Less extra space used, but slower
     def isSubsequenceOld(self, s, t):
         """
         :type s: str

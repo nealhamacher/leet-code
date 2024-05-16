@@ -1,4 +1,5 @@
 class Solution(object):
+    # Runtime: 12 ms, beats 77.39%. Memory: 11.78 MB, beats 56.99%
     def isValid(self, s):
         """
         :type s: str
@@ -15,9 +16,7 @@ class Solution(object):
                 current = stack.pop()
                 if current != matches[char]:
                     return False
-        if len(stack) != 0:
-            return False
-        return True
+        return len(stack) == 0
     
 
 ################################################################################

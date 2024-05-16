@@ -1,4 +1,5 @@
 class Solution(object):
+    # Runtime = 59ms, beats 79.70%. Memory = 11.68 MB, beats 73.24%
     def isValidSudoku(self, board):
         """
         :type board: List[List[str]]
@@ -22,7 +23,7 @@ class Solution(object):
                         cols[j].append(board[i][j])
                         boxes[box].append(board[i][j])
         return True
-    
+        
 
 ################################################################################
 
