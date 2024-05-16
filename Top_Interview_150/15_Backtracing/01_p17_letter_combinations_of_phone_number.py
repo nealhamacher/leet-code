@@ -4,7 +4,11 @@ class Solution(object):
         :type digits: str
         :rtype: List[str]
         """
-        return(self.generateCombinations(digits, ""))
+        combos = self.generateCombinations(digits, "")
+        result = []
+        for item in combos:
+            result.extend(item)
+        return result
         
     def generateCombinations(self, digits, output):
         """
