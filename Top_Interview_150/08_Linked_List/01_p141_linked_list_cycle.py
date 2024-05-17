@@ -5,22 +5,24 @@ class ListNode(object):
          self.next = None
 
 class Solution(object):
+    # Runtime: 1813 ms, beats 7.87%. Memory: 18.85 MB, beats 26.64
     def hasCycle(self, head):
         """
         :type head: ListNode
         :rtype: bool
         """
         current = head
-        visited = [current]
-        while current.next != None:
-            if current.next in visited:
+        visited = []
+        while current != None:
+            if current in visited:
                 return True
             else:
-                current = current.next
                 visited.append(current)
+                current = current.next
         return False
 
     # Using Floyd's tortoise and hare method
+    # Runtime: 30 ms, beats 80.24%. Memory: 18.90, beats 26.64%
     def hasCycleFloyd(self, head):
         """
         :type head: ListNode

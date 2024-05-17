@@ -3,6 +3,7 @@ class Node(object):
         self.children = {}
         self.isLastLetter = False
 
+# Runtime: 155 ms, beats 43.20%. Memory: 38.71 MBs, beats 58.92%
 class Trie(object):
 
     def __init__(self):

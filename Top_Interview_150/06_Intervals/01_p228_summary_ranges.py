@@ -1,4 +1,5 @@
 class Solution(object):
+    # Runtime: 11 ms, beats 76.03%. Memory: 11.44 MB, beats 98.16%
     def summaryRanges(self, nums):
         """
         :type nums: List[int]
