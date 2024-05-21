@@ -25,6 +25,14 @@ class Solution(object):
                 print(closest_n)
         print(order)
         return closest_n
+    
+    def findKthLargest(self, nums, k):
+        """
+        :type nums: List[int]
+        :type k: int
+        :rtype: int
+        """
+        return (sorted(nums, reverse = True)[k-1])
                          
 
 
