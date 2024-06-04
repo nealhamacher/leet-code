@@ -34,6 +34,110 @@ class Solution(object):
             i += 1
         return sum
 
+    def romanToInt2(self, s):
+        """
+        :type s: str
+        :rtype: int
+        """
+        i = len(s) - 1
+        sum = 0
+        while s[i] == "I":
+            sum += 1
+            i -= 1
+            if i < 0:
+                return sum
+        while s[i] == "V":
+            sum += 5
+            i -= 1
+            if i < 0:
+                return sum
+        while s[i] == "I":
+            sum -= 1
+            i -= 1
+            if i < 0:
+                return sum
+        while s[i] == "V":
+            sum += 5
+            i -= 1
+            if i < 0:
+                return sum
+        while s[i] == "X":
+            sum += 10
+            i -= 1
+            if i < 0:
+                return sum
+        while s[i] == "I":
+            sum -= 1
+            i -= 1
+            if i < 0:
+                return sum
+        while s[i] == "X":
+            sum += 10
+            i -= 1
+            if i < 0:
+                return sum
+        while s[i] == "L":
+            sum += 50
+            i -= 1
+            if i < 0:
+                return sum
+        while s[i] == "X":
+            sum -= 10
+            i -= 1
+            if i < 0:
+                return sum
+        while s[i] == "L":
+            sum += 50
+            i -= 1
+            if i < 0:
+                return sum
+        while s[i] == "C":
+            sum += 100
+            i -= 1
+            if i < 0:
+                return sum
+        while s[i] == "X":
+            sum -= 10
+            i -= 1
+            if i < 0:
+                return sum
+        while s[i] == "C":
+            sum += 100
+            i -= 1
+            if i < 0:
+                return sum
+        while s[i] == "D":
+            sum += 500
+            i -= 1
+            if i < 0:
+                return sum
+        while s[i] == "C":
+            sum -= 100
+            i -= 1
+            if i < 0:
+                return sum
+        while s[i] == "D":
+            sum += 500
+            i -= 1
+            if i < 0:
+                return sum
+        while s[i] == "M":
+            sum += 1000
+            i -= 1
+            if i < 0:
+                return sum
+        while s[i] == "C":
+            sum -= 100
+            i -= 1
+            if i < 0:
+                return sum
+        while s[i] == "M":
+            sum += 1000
+            i -= 1
+            if i < 0:
+                return sum
+        return sum
+
     # Runtime - 34 ms, beats 36.96%, Memory - 11.63MB, beats 52.60%
     def romanToIntOLD(self, s):
         """
@@ -81,3 +185,7 @@ if __name__ == "__main__":
     print(sol.romanToInt("III"))
     print(sol.romanToInt("LVIII"))
     print(sol.romanToInt("MCMXCIV"))
+
+    print(sol.romanToInt2("III"))
+    print(sol.romanToInt2("LVIII"))
+    print(sol.romanToInt2("MCMXCIV"))
