@@ -1,4 +1,5 @@
 class Solution(object):
+    # Runtime - 34 ms, beats 36.96%, Memory - 11.63MB, beats 52.60%
     def romanToInt(self, s):
         """
         :type s: str
@@ -32,7 +33,7 @@ class Solution(object):
                     sum += 1
             i += 1
         return sum
-                    
+
 
 ################################################################################
 
