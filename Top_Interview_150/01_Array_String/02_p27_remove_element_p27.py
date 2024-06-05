@@ -1,4 +1,5 @@
 class Solution(object):
+    # Runtime - 14 ms, beats 75.30%. Memory - 11.64 MB, beats 35.85%
     def removeElement(self, nums, val):
         """
         :type nums: List[int]

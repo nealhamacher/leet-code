@@ -1,5 +1,5 @@
 class Solution(object):
-    # Simple solution - O(n**2)
+    # Simple solution, O(n**2) time complexity
     def twoSum(self, nums, target):
         """
         :type nums: List[int]
@@ -12,7 +12,7 @@ class Solution(object):
                     return [i, j]
         return None
 
-    # Optimized solution using hashmap
+    # Optimized solution using hashmap, O(n) time complexity
     def twoSum2(self, nums, target):
         difference_map = {}
         for i in range(len(nums)):

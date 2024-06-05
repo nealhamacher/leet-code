@@ -1,4 +1,5 @@
 class Solution(object):
+    # Runtime: 18 ms beats 50.75%. Memory: 11.94 MB, beats 6.95%
     def simplifyPath(self, path):
         """
         :type path: str

@@ -1,4 +1,5 @@
 class Solution(object):
+    # Runtime: 461 ms, beats 88.04%. Memory = 22.67 MB, beats 48.16%
     def containsNearbyDuplicate(self, nums, k):
         """
         :type nums: List[int]

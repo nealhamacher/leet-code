@@ -42,7 +42,6 @@ class Solution(object):
                 return False
             else:
                 tortoise = calculateNext(tortoise)
-                print(tortoise)
                 hare = calculateNext(calculateNext(hare))
         return True
 

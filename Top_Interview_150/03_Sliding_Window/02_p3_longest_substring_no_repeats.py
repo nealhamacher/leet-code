@@ -47,6 +47,8 @@ class Solution(object):
                     break
             else:
                 end += 1
+        if end - start + 1 > longest:
+            return end - start + 1
         return longest
 
 ################################################################################
