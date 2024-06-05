@@ -6,6 +6,8 @@ class Solution(object):
         :type nums: List[int]
         :rtype: bool
         """
+        if len(nums) == 1:
+            return True
         for i in range(len(nums)):
             if nums[i] <= 0:
                 for j in range(1, i+1):
@@ -22,6 +24,8 @@ class Solution(object):
         :type nums: List[int]
         :rtype: bool
         """
+        if len(nums) == 1:
+            return True
         max_jump = nums[0]
         for i in range(1, len(nums)-1):
             # Decrease maximum jump by one each iteration

@@ -7,7 +7,7 @@ class Solution(object):
         citations.sort(reverse=True)
         for i in range(len(citations)):
             if (i+1) >= citations[i]:
-                return citations[i]
+                return i+1
         return 0
 
 
@@ -19,3 +19,4 @@ if __name__ == "__main__":
     print(sol.hIndex(citations))
     citations = [1,3,1]
     print(sol.hIndex(citations))
+    print(sol.hIndex([100]))

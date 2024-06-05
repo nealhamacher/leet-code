@@ -34,6 +34,8 @@ class Solution(object):
             i += 1
         return sum
 
+    # While loops and works in reverse, not significant change in performance
+    # Runtime - 23 ms, beats 86.02%. Memory - 11.68MB, beats 52.15%
     def romanToInt2(self, s):
         """
         :type s: str
