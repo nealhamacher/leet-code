@@ -1,4 +1,5 @@
 class Solution(object):
+    # Runtime: 66 ms, beats 9.12%. Memory: 11.86 MB, beats 97.77%
     def isAnagram(self, s, t):
         """
         :type s: str

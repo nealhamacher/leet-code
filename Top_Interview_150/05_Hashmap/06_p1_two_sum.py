@@ -1,5 +1,6 @@
 class Solution(object):
     # Simple solution, O(n**2) time complexity
+
     def twoSum(self, nums, target):
         """
         :type nums: List[int]
@@ -13,6 +14,7 @@ class Solution(object):
         return None
 
     # Optimized solution using hashmap, O(n) time complexity
+    # Runtime: 333 ms, beats 52.66%. Memory: 12.53 MB, beats 45.33%
     def twoSum2(self, nums, target):
         difference_map = {}
         for i in range(len(nums)):
