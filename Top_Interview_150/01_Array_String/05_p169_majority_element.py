@@ -1,4 +1,5 @@
 class Solution(object):
+    # Runtime 155 ms, beats 78.90%, Memory 13.28 MB, beats 66.80%
     def majorityElement(self, nums):
         """
         :type nums: List[int]
@@ -13,12 +14,12 @@ class Solution(object):
         else:
             return nums[len(nums)//2]
 
+    # Runtime 164ms, beats 43.48%. Memory 14.02Mb, beats 7.89%
     def majorityElement2(self, nums):
         """
         :type nums: List[int]
         :rtype: int
         """
-        # Runtime 164ms, beats 43.48%. Memory 14.02Mb, beats 7.89%
         occurrences = {}
         for i in range(len(nums)):
             if nums[i] not in occurrences.keys():

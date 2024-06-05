@@ -1,4 +1,5 @@
 class Solution(object):
+    # Timeout error - too long to run
     def rotate(self, nums, k): # Method 1 - pop and insert
         """
         :type nums: List[int]
@@ -11,6 +12,7 @@ class Solution(object):
             tmp =nums.pop()
             nums.insert(0, tmp)
 
+    # Runtime 146 ms, beats 80.50%. Memory 23.38MB, beats 10.63%
     def rotate2(self, nums, k): # Method 2 - copy and replace
         """
         :type nums: List[int]
@@ -20,7 +22,7 @@ class Solution(object):
         rot = k % len(nums)
         nums[0:len(nums)-rot+1], nums[len(nums)-rot+1:len(nums)] = nums[len(nums)-rot:len(nums)], nums[0:len(nums)-rot]
 
-    
+    # Timeout error - too long to run
     def rotate3(self, nums, k): # Method 3 - consectutive rotations, in-place w/ O(1) extra space
         """
         :type nums: List[int]

@@ -1,4 +1,5 @@
 class Solution(object):
+    # Runtime 39 ms, beats 47.95%. Memory 12.75 MB, beats 59.58%
     def maxProfit(self, prices):
         """
         :type prices: List[int]
@@ -16,6 +17,7 @@ class Solution(object):
             profit += current_profit
         return profit
     
+    # Runtime 31 ms, beats 92.15%. Memory 12.84 MB, beats 34.24%
     def maxProfit2(self, prices):
         """
         :type prices: List[int]

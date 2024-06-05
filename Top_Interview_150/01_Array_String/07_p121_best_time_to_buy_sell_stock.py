@@ -1,4 +1,5 @@
 class Solution(object):
+    # Runtime 715 ms, beats 90.58%. Memory 21.06 MB, beats 15.84%
     def maxProfit(self, prices):
         """
         :type prices: List[int]
